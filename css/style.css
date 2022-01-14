@@ -47,6 +47,11 @@ button:hover {
 }
 
 
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 a {
     text-decoration: none;
@@ -95,7 +100,6 @@ h2 {
     
 
 }
-
 @keyframes rotate {
 
 
@@ -205,6 +209,7 @@ section {
     font-weight: bold;
     background-image: linear-gradient(#FF79DA, #9356DC );
     border: none;
+    transition: 250ms;
     
 
 }
@@ -225,6 +230,7 @@ animation-duration: 1.5s;
 animation-delay: 2s;
 animation-fill-mode: forwards;
 opacity: 0;
+transition: 250ms;
 
 }
 
@@ -343,6 +349,7 @@ width: 10%;
     margin-bottom: 30px;
     border-radius: 15px;
     box-shadow: 1px 1px 18px -3px grey;
+    transition: 250ms;
 
 }
 .card .img {
@@ -421,19 +428,22 @@ width: 10%;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    position: relative;
+
     
 
 }
 
 .like .hcolor {
-    display: block;
+    position: absolute;
     font-size: 40px;
     color: rgb(118, 118, 118);
+    
 }
 
 .like .h {
     
-display: none;
+position: absolute;
 font-size: 40px;      
 background:-moz-linear-gradient(top, #FF79DA, #9356DC); 
 background: -webkit-linear-gradient(top, #FF79DA, #9356DC); 
@@ -442,17 +452,16 @@ background: linear-gradient(to bottom, #FF79DA, #9356DC);
 -moz-background-clip: text;
 background-clip: text;
 -webkit-text-fill-color:transparent;
+transition: 250ms;
+opacity: 0;
 }
 
 
-.hcolor:hover + .h {
-    display: block;
-    
+.like:hover .h {
+    opacity:1 ;
+
 }
 
-.hcolor:hover {
-    display: none;
-}
 
 
 footer {

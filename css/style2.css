@@ -85,6 +85,7 @@ section {
 .section-head {
     display: flex;
     width: 100%;
+    align-items: center;
 }
 
 
@@ -161,15 +162,15 @@ section {
 
 
 
-.two {
+.card:nth-child(2) {
     animation-delay:0.5s ;
 }
 
-.three {
+.card:nth-child(3){
     animation-delay:1s ;
 }
 
-.four {
+.card:nth-child(4){
 
     animation-delay: 1.5s;
     }
@@ -190,16 +191,20 @@ section {
 
 
 
-.card:hover .part1 {
-    width: calc(100% - 190px) ;
+.card:hover .animation {
+    width: 90px !important;
 }
-
+.card:hover .part1 {
+    width: calc(100% - 90px)  !important;
+}
 .card:hover .fa-check-circle {
     transform: rotate(1440deg);
+    opacity: 1;
 }
 
 .fa-check-circle {
     transition: .5s;
+    opacity: 0;
 }
 
 .part1 {
@@ -213,6 +218,8 @@ section {
     background: white;
     border-radius: 15px;
     transition: .5s;
+
+    flex-shrink: 3;
     
 }
 
@@ -223,7 +230,7 @@ section {
     height: 30px;
     
     white-space: nowrap;
-    overflow: hidden !important;
+    overflow: hidden ;
     text-overflow: ellipsis;
 }
 
@@ -236,14 +243,19 @@ section {
 .card-desc {
     width: 90%;
     font-size: 18px;
+
+    
+
+
     white-space: nowrap;
     overflow: hidden !important;
-    text-overflow: ellipsis;
+    text-overflow:ellipsis;
 }
 
 .price {
     width: 10%;
     font-weight: bold;
+    margin-right: 10px;
 }
 
 
@@ -252,15 +264,19 @@ section {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    position: relative;
-    left: 100px;
+    transition: 500ms;
+
+    flex-grow: 10;
+    
     font-size: 30px;
 
     
     
     
     background-color: #99E2D0;
-    width: 90px;
+    
+    width: 0px;
+    
     height: 90px;
     color: white;
 }
@@ -285,6 +301,7 @@ section {
     font-weight: bold;
     background-image: linear-gradient(#FF79DA, #9356DC );
     border: none;
+    transition: 250ms;
 
 }
 
@@ -311,20 +328,24 @@ section {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    position: relative;
+    height: 50px;
+
     
 
 }
 
 .like .hcolor {
-    display: block;
-    font-size: 30px;
+    position: absolute;
+    font-size: 40px;
     color: rgb(118, 118, 118);
+    
 }
 
 .like .h {
     
-display: none;
-font-size: 30px;      
+position: absolute;
+font-size: 40px;      
 background:-moz-linear-gradient(top, #FF79DA, #9356DC); 
 background: -webkit-linear-gradient(top, #FF79DA, #9356DC); 
 background: linear-gradient(to bottom, #FF79DA, #9356DC);
@@ -332,16 +353,15 @@ background: linear-gradient(to bottom, #FF79DA, #9356DC);
 -moz-background-clip: text;
 background-clip: text;
 -webkit-text-fill-color:transparent;
+transition: 250ms;
+opacity: 0;
+z-index: 1;
 }
 
 
-.hcolor:hover + .h {
-    display: block;
-    
-}
+.like:hover .h {
+    opacity:1 ;
 
-.hcolor:hover {
-    display: none;
 }
 
 
