@@ -327,7 +327,7 @@ section {
     display: flex; 
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+   
     position: relative;
     height: 50px;
 
@@ -359,11 +359,16 @@ z-index: 1;
 }
 
 
-.like:hover .h {
+.h:hover {
     opacity:1 ;
 
 }
+.like i {
 
+
+ cursor: pointer;
+
+}
 
 footer {
     margin-left: auto;
